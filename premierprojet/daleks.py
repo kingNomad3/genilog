@@ -22,7 +22,7 @@ class Docteur():
                 self.x = self.x
                 self.y = self.y
         else:
-            self.x = self.1x
+            self.x = self.x
             self.y = self.y
 
 
@@ -44,6 +44,9 @@ class Dalek():
         self.parent = parent
         self.x = x
         self.y = y
+
+
+
 
 
 class Ferraille():
