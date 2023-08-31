@@ -45,21 +45,6 @@ class Dalek():
         self.x = x
         self.y = y
 
-    def bouge_Vers_Docteur(self, target_x, target_y):
-            if self.x < target_x:
-                self.x += 1
-            elif self.x > target_x:
-                self.x -= 1
-
-            if self.y < target_y:
-                self.y += 1
-            elif self.y > target_y:
-                self.y -= 1
-
-
-
-
-
 
 class Ferraille():
     def __init__(self, parent, x: int, y: int):
