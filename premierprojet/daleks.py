@@ -74,6 +74,7 @@ class AireDeJeu():
 
 class Partie():
     def __init__(self, parent):
+        self.position_liste = []
         self.parent = parent
         self.airedejeu = AireDeJeu(self, 10, 8)
         self.doc = Docteur(self, 5, 4)
@@ -83,6 +84,7 @@ class Partie():
         self.daleksParNiveau = 5
         self.creer_niveau()
 
+
     def creer_niveau(self):
         self.niveau += 1 # ya pas de ++ et -- en python il faut donc utiliser +=1 et -=1
         nb_daleks = self.niveau * self.daleksParNiveau
@@ -91,9 +93,53 @@ class Partie():
             y = random.randrange(self.airedejeu.hauteur)
             d = Dalek(self, x, y)
             self.daleks.append(d)
+            # self.dalek_non_sur_docteur()
+            # self.dalek_non_sur_dalek()
 
     def jouer_coups(self, rep):
         self.doc.jouer_coups(rep)
+        for dalek in self.daleks:
+            dalek.bouge_Vers_Docteur(self.doc.x, self.doc.y)
+            self.dalek.x
+
+    # pour position x (position y a faire plus tard)
+    def dalek_non_sur_doc(self):
+        self.positionX_liste.append(self.doc.x)
+        nb_daleks = self.niveau * self.daleksParNiveau
+        while nb_daleks:
+            positionXDalek = random.randrange(self.airedejeu.largeur)
+            for i in self.position_liste:
+                if positionXDalek != self.positionX_liste[i]:
+
+
+
+
+
+    # def dalek_non_sur_docteur(self):
+    #     for dalek in self.daleks:
+    #         while self.daleks[dalek.x] == self.doc.x:
+    #             self.daleks[dalek.x] = random.randrange(self.airedejeu.largeur)
+
+
+
+            # while self.daleks[dalek].y == self.doc.y:
+            #     self.daleks[dalek].y = random.randrange(self.airedejeu.hauteur)
+
+    # def dalek_non_sur_dalek(self):
+    #     for dalek in self.daleks:
+    #         while self.dalek.x == self.dalek.x:
+    #             self.dalek.x += random.randrange(self.airedejeu.largeur)
+    #
+    #         while self.dalek.y == self.dalek.y:
+    #             self.dalek.y += random.randrange(self.airedejeu.hauteur)
+
+
+
+
+
+
+
+
 
 
 # la vue se charge de faire l'affichage
