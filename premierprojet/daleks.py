@@ -22,7 +22,7 @@ class Docteur():
                 self.x = self.x
                 self.y = self.y
         else:
-            self.x = self.x
+            self.x = self.1x
             self.y = self.y
 
 
